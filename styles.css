@@ -41,13 +41,15 @@ button {
     height: 100px;
     width: 100px;
     border-radius: 5px;
+    font-size: 40px;
+    font-weight: 400;
 }
 .zero {
     width: 200px;
     background-color: gray;
 }
-.orange {
-    background-color: coral;
+.pink {
+    background-color: pink;
 }
 .cyan {
     background-color: cyan;

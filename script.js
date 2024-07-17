@@ -1,15 +1,15 @@
-// function add (a,b){
-//     return a + b
-// }
-// function subtract (a,b){
-//     return a - b
-// }
-// function multiply (a,b){
-//     return a * b
-// }
-// function divide (a,b){
-//     return a / b
-// }
+function add (a,b){
+    return a + b
+}
+function subtract (a,b){
+    return a - b
+}
+function multiply (a,b){
+    return a * b
+}
+function divide (a,b){
+    return a / b
+}
 
 // Variables
 const display = document.querySelector(".display")
@@ -27,60 +27,140 @@ const period = document.querySelector("#period")
 const AC = document.querySelector("#AC")
 const negative = document.querySelector("#negative")
 const percentage = document.querySelector("#percentage")
-const multiply = document.querySelector("#multiply")
-const divide = document.querySelector("#divide")
-const add = document.querySelector("#add")
-const subtract = document.querySelector("#subtract")
+const multiplication = document.querySelector("#multiply")
+const division = document.querySelector("#divide")
+const addition = document.querySelector("#add")
+const subtraction = document.querySelector("#subtract")
 const equals = document.querySelector("#equals")
-// let firstNum;
-// let operator;
-// let lastNum;
-let math = [];
-
+let firstNum = [];
+let operator;
+let lastNum = [];
 // Step 3
 function operate (){
-    let brother = math.toString()
-    let dude = brother.replaceAll(",","")
-    let wtf = eval(dude)
-    console.log(wtf)
+if (operator == "+"){
+    display.textContent= add(firstNum.toString,lastNum.toString)
+} else if (operator == "-"){
+    display.textContent= subtract(firstNum.toString,lastNum.toString)
+} else if (operator == "x"){
+    display.textContent= multiply(firstNum.toString,lastNum.toString)
+} else if (operator == "/"){
+    display.textContent= divide(firstNum.toString,lastNum.toString)
 }
+}
+// 
+// 
 num1.addEventListener("click", function (e){
-    display.textContent = `${num1.textContent}`
-    math.push(num1.textContent)
+if (operator == undefined){
+    firstNum.push("1")
+    display.textContent = `${firstNum.join().replaceAll(",","")}`
+} else {
+    lastNum.push("1")
+    display.textContent = `${lastNum.join().replaceAll(",","")}`
+}
 })
 num2.addEventListener("click", function (e){
-    display.textContent = `${num2.textContent}`
-    math.push(num2.textContent)
+    if (operator == undefined){
+    firstNum.push("2")
+    display.textContent = `${firstNum.join().replaceAll(",","")}`
+} else {
+    lastNum.push("2")
+    display.textContent = `${lastNum.join().replaceAll(",","")}`
+}
 })
 num3.addEventListener("click", function (e){
-    display.textContent = `${num3.textContent}`
-    math.push(num3.textContent)
+    if (operator == undefined){
+    firstNum.push("3")
+    display.textContent = `${firstNum.join().replaceAll(",","")}`
+} else {
+    lastNum.push("3")
+    display.textContent = `${lastNum.join().replaceAll(",","")}`
+}
 })
 num4.addEventListener("click", function (e){
-    display.textContent = `${num4.textContent}`
-    math.push(num4.textContent)
+    if (operator == undefined){
+    firstNum.push("4")
+    display.textContent = `${firstNum.join().replaceAll(",","")}`
+} else {
+    lastNum.push("4")
+    display.textContent = `${lastNum.join().replaceAll(",","")}`
+}
 })
 num5.addEventListener("click", function (e){
-    display.textContent = `${num5.textContent}`
-    math.push(num5.textContent)
+    if (operator == undefined){
+    firstNum.push("5")
+    display.textContent = `${firstNum.join().replaceAll(",","")}`
+} else {
+    lastNum.push("5")
+    display.textContent = `${lastNum.join().replaceAll(",","")}`
+}
 })
 num6.addEventListener("click", function (e){
-    display.textContent = `${num6.textContent}`
-    math.push(num6.textContent)
+    if (operator == undefined){
+    firstNum.push("6")
+    display.textContent = `${firstNum.join().replaceAll(",","")}`
+} else {
+    lastNum.push("6")
+    display.textContent = `${lastNum.join().replaceAll(",","")}`
+}
 })
 num7.addEventListener("click", function (e){
-    display.textContent = `${num7.textContent}`
-    math.push(num7.textContent)
+    if (operator == undefined){
+    firstNum.push("7")
+    display.textContent = `${firstNum.join().replaceAll(",","")}`
+} else {
+    lastNum.push("7")
+    display.textContent = `${lastNum.join().replaceAll(",","")}`
+}
 })
 num8.addEventListener("click", function (e){
-    display.textContent = `${num8.textContent}`
-    math.push(num8.textContent)
+    if (operator == undefined){
+    firstNum.push("8")
+    display.textContent = `${firstNum.join().replaceAll(",","")}`
+} else {
+    lastNum.push("8")
+    display.textContent = `${lastNum.join().replaceAll(",","")}`
+}
 })
 num9.addEventListener("click", function (e){
-    display.textContent = `${num9.textContent}`
-    math.push(num9.textContent)
+    if (operator == undefined){
+    firstNum.push("9")
+    display.textContent = `${firstNum.join().replaceAll(",","")}`
+} else {
+    lastNum.push("9")
+    display.textContent = `${lastNum.join().replaceAll(",","")}`
+}
 })
 num0.addEventListener("click", function (e){
-    display.textContent = `${num0.textContent}`
-    math.push(num0.textContent)
+    if (operator == undefined){
+    firstNum.push("0")
+    display.textContent = `${firstNum.join().replaceAll(",","")}`
+} else {
+    lastNum.push("0")
+    display.textContent = `${lastNum.join().replaceAll(",","")}`
+}
+})
+period.addEventListener("click", function (e){
+    if (operator == undefined){
+    firstNum.push(".")
+    display.textContent = `${firstNum.join().replaceAll(",","")}`
+} else {
+    lastNum.push(".")
+    display.textContent = `${lastNum.join().replaceAll(",","")}`
+}
+})
+// negative.addEventListener("click", function (e){
+//     if (operator == undefined){
+//     firstNum.push("-")
+//     display.textContent = `${firstNum.join().replaceAll(",","")}`
+// } else {
+//     lastNum.push("-")
+//     display.textContent = `${lastNum.join().replaceAll(",","")}`
+// }
+// })
+addition.addEventListener("click", function (e){
+    operator = "+"
+})
+
+equals.addEventListener("click", function (e){
+    operate()
 })

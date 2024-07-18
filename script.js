@@ -24,9 +24,9 @@ const num8 = document.querySelector("#num8")
 const num9 = document.querySelector("#num9")
 const num0 = document.querySelector("#num0")
 const period = document.querySelector("#period")
-const AC = document.querySelector("#AC")
 const negative = document.querySelector("#negative")
-const percentage = document.querySelector("#percentage")
+const C = document.querySelector("#C")
+const del = document.querySelector("#del")
 const multiplication = document.querySelector("#multiply")
 const division = document.querySelector("#divide")
 const addition = document.querySelector("#add")
@@ -39,19 +39,19 @@ let lastNum = "";
 function operate (){
 if (operator == "+"){
     display.textContent = `${add(firstNum , lastNum)}`
-    firstNum = [display.textContent]
+    firstNum = display.textContent
 } else if (operator == "-"){
     display.textContent = `${subtract(firstNum , lastNum)}`
-    firstNum = [display.textContent]
+    firstNum = display.textContent
 } else if (operator == "x"){
     display.textContent = `${multiply(firstNum , lastNum)}`
-    firstNum = [display.textContent]
+    firstNum = display.textContent
 } else if (operator == "/"){
     display.textContent = `${divide(firstNum , lastNum)}`
-    firstNum = [display.textContent]
+    firstNum = display.textContent
 }
 }
-// 
+//                                              NUMBERS
 // 
 num1.addEventListener("click", function (e){
 if (operator == undefined){
@@ -152,6 +152,8 @@ period.addEventListener("click", function (e){
         display.textContent = `${lastNum}`
     }
 })
+//                                              Other buttons
+// 
 negative.addEventListener("click", function (e){
 
 })
@@ -172,4 +174,19 @@ equals.addEventListener("click", function (e){
     operate()
     operator = undefined
     lastNum = ""
+})
+C.addEventListener("click", function (e){
+    operator = undefined
+    firstNum = ""
+    lastNum = ""
+    display.textContent = ""
+})
+del.addEventListener("click", function (e){
+    if (operator == undefined){
+        firstNum = firstNum.slice(0,-1)
+        display.textContent = firstNum
+    } else {
+        lastNum = lastNum.slice(0,-1)
+        display.textContent = lastNum
+    }
 })

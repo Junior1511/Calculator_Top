@@ -1,14 +1,18 @@
 function add (a,b){
-    return parseFloat(a) + parseFloat(b)
+    let x = parseFloat(a) + parseFloat(b) 
+    return x = (Math.round(x * 100) / 100).toString().substring(0, 10) 
 }
 function subtract (a,b){
-    return parseFloat(a) - parseFloat(b)
+    let x = parseFloat(a) - parseFloat(b) 
+    return x = (Math.round(x * 100) / 100).toString().substring(0, 10) 
 }
 function multiply (a,b){
-    return parseFloat(a) * parseFloat(b)
+    let x = parseFloat(a) * parseFloat(b) 
+    return x = (Math.round(x * 100) / 100).toString().substring(0, 10) 
 }
 function divide (a,b){
-    return parseFloat(a) / parseFloat(b)
+    let x = parseFloat(a) / parseFloat(b) 
+    return x = (Math.round(x * 100) / 100).toString().substring(0, 10) 
 }
 
 // Variables
@@ -37,119 +41,132 @@ let operator;
 let lastNum = "";
 // Step 3
 function operate (){
-if (operator == "+"){
+if (lastNum == ""){
+} else if (operator == "+"){
     display.textContent = `${add(firstNum , lastNum)}`
     firstNum = display.textContent
+    lastNum = ""
+    operator = undefined
 } else if (operator == "-"){
     display.textContent = `${subtract(firstNum , lastNum)}`
     firstNum = display.textContent
+    lastNum = ""
+    operator = undefined
 } else if (operator == "x"){
     display.textContent = `${multiply(firstNum , lastNum)}`
     firstNum = display.textContent
+    lastNum = ""
+    operator = undefined
 } else if (operator == "/"){
     display.textContent = `${divide(firstNum , lastNum)}`
     firstNum = display.textContent
+    lastNum = ""
+    operator = undefined
 }
 }
 //                                              NUMBERS
 // 
 num1.addEventListener("click", function (e){
 if (operator == undefined){
-    firstNum = firstNum.concat("1")
+    firstNum = firstNum.concat("1").substring(0, 10)
     display.textContent = `${firstNum}`
 } else {
-    lastNum = lastNum.concat("1")
+    lastNum = lastNum.concat("1").substring(0, 10)
     display.textContent = `${lastNum}`
 }
 })
 num2.addEventListener("click", function (e){
 if (operator == undefined){
-    firstNum = firstNum.concat("2")
+    firstNum = firstNum.concat("2").substring(0, 10)
     display.textContent = `${firstNum}`
 } else {
-    lastNum = lastNum.concat("2")
+    lastNum = lastNum.concat("2").substring(0, 10)
     display.textContent = `${lastNum}`
 }
 })
 num3.addEventListener("click", function (e){
 if (operator == undefined){
-    firstNum = firstNum.concat("3")
+    firstNum = firstNum.concat("3").substring(0, 10)
     display.textContent = `${firstNum}`
 } else {
-    lastNum = lastNum.concat("3")
+    lastNum = lastNum.concat("3").substring(0, 10)
     display.textContent = `${lastNum}`
 }    
 })
 num4.addEventListener("click", function (e){
 if (operator == undefined){
-    firstNum = firstNum.concat("4")
+    firstNum = firstNum.concat("4").substring(0, 10)
     display.textContent = `${firstNum}`
 } else {
-    lastNum = lastNum.concat("4")
+    lastNum = lastNum.concat("4").substring(0, 10)
     display.textContent = `${lastNum}`
 }    
 })
 num5.addEventListener("click", function (e){
 if (operator == undefined){
-    firstNum = firstNum.concat("5")
+    firstNum = firstNum.concat("5").substring(0, 10)
     display.textContent = `${firstNum}`
 } else {
-    lastNum = lastNum.concat("5")
+    lastNum = lastNum.concat("5").substring(0, 10)
     display.textContent = `${lastNum}`
 }    
 })
 num6.addEventListener("click", function (e){
 if (operator == undefined){
-    firstNum = firstNum.concat("6")
+    firstNum = firstNum.concat("6").substring(0, 10)
     display.textContent = `${firstNum}`
 } else {
-    lastNum = lastNum.concat("6")
+    lastNum = lastNum.concat("6").substring(0, 10)
     display.textContent = `${lastNum}`
 }   
 })
 num7.addEventListener("click", function (e){
 if (operator == undefined){
-    firstNum = firstNum.concat("7")
+    firstNum = firstNum.concat("7").substring(0, 10)
     display.textContent = `${firstNum}`
 } else {
-    lastNum = lastNum.concat("7")
+    lastNum = lastNum.concat("7").substring(0, 10)
     display.textContent = `${lastNum}`
 }    
 })
 num8.addEventListener("click", function (e){
 if (operator == undefined){
-    firstNum = firstNum.concat("8")
+    firstNum = firstNum.concat("8").substring(0, 10)
     display.textContent = `${firstNum}`
 } else {
-    lastNum = lastNum.concat("8")
+    lastNum = lastNum.concat("8").substring(0, 10)
     display.textContent = `${lastNum}`
 }   
 })
 num9.addEventListener("click", function (e){
 if (operator == undefined){
-    firstNum = firstNum.concat("9")
+    firstNum = firstNum.concat("9").substring(0, 10)
     display.textContent = `${firstNum}`
 } else {
-    lastNum = lastNum.concat("9")
+    lastNum = lastNum.concat("9").substring(0, 10)
     display.textContent = `${lastNum}`
 }
 })
 num0.addEventListener("click", function (e){
 if (operator == undefined){
-    firstNum = firstNum.concat("0")
+    firstNum = firstNum.concat("0").substring(0, 10)
     display.textContent = `${firstNum}`
 } else {
-    lastNum = lastNum.concat("0")
+    lastNum = lastNum.concat("0").substring(0, 10)
     display.textContent = `${lastNum}`
 }
 })
 period.addEventListener("click", function (e){
     if (operator == undefined){
-        firstNum = firstNum.concat(".")
-        display.textContent = `${firstNum}`
+        if (firstNum.indexOf(".") == -1){
+            firstNum = firstNum.concat(".").substring(0, 10)
+            display.textContent = `${firstNum}`
+        } else {}
     } else {
-        lastNum = lastNum.concat(".")
+        if (lastNum.indexOf(".") == -1){
+        lastNum = lastNum.concat(".").substring(0, 10)
         display.textContent = `${lastNum}`
+        } else {}
     }
 })
 //                                              Other buttons
@@ -158,22 +175,40 @@ negative.addEventListener("click", function (e){
 
 })
 addition.addEventListener("click", function (e){
-    operator = "+"
+    if (operator !== undefined){
+        operate()
+        operator = "+"
+    } else {
+        operator = "+"
+    }
 })
 subtraction.addEventListener("click", function (e){
-    operator = "-"
+    if (operator !== undefined){
+        operate()
+        operator = "-"
+    } else {
+        operator = "-"
+    }
 })
 division.addEventListener("click", function (e){
-    operator = "/"
+    if (operator !== undefined){
+        operate()
+        operator = "/"
+    } else {
+        operator = "/"
+    }
 })
 multiplication.addEventListener("click", function (e){
-    operator = "x"
+    if (operator !== undefined){
+        operate()
+        operator = "x"
+    } else {
+        operator = "x"
+    }
 })
 
 equals.addEventListener("click", function (e){
     operate()
-    operator = undefined
-    lastNum = ""
 })
 C.addEventListener("click", function (e){
     operator = undefined
